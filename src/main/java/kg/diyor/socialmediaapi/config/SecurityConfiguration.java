@@ -40,7 +40,7 @@ public class SecurityConfiguration {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             CorsConfiguration corsConfig = new CorsConfiguration();
-                            corsConfig.addAllowedOrigin("*"); // Разрешить для всех доменов
+                            corsConfig.addAllowedOrigin("https://social-media-api-production-714d.up.railway.app"); // Разрешить только этот домен
                             corsConfig.addAllowedMethod("*"); // Разрешить все HTTP методы
                             corsConfig.addAllowedHeader("*"); // Разрешить все заголовки
                             corsConfig.setAllowCredentials(true); // Разрешить кросс-доменные cookies и аутентификацию
