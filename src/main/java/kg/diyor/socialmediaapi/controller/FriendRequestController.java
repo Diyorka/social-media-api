@@ -25,6 +25,7 @@ import java.util.List;
 @RequestMapping("/api/friend-requests")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 @Tag(
         name = "Контроллер для работы с запросами в друзья",
         description = "В этом контроллере есть возможности отправления, получения и отмены запросов в друзья"

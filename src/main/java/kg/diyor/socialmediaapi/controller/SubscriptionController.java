@@ -24,6 +24,7 @@ import java.util.List;
 @RequestMapping("/api/subscriptions")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 @Tag(
         name = "Контроллер для работы с подписками",
         description = "В этом контроллере есть возможности получения и отмены подписок"
