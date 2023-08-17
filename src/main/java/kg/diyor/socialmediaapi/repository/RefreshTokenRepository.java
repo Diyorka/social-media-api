@@ -1,5 +1,6 @@
 package kg.diyor.socialmediaapi.repository;
 
+import kg.diyor.socialmediaapi.model.RefreshToken;
 import kg.diyor.socialmediaapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,8 +13,10 @@ import java.util.Optional;
  */
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String username);
+public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {
+    boolean existsByUser(User user);
 
-    boolean existsByEmail(String email);
+    RefreshToken findByUser(User user);
+
+    Optional<RefreshToken> findByToken(String refreshToken);
 }

@@ -36,6 +36,8 @@ public class User extends BaseEntity implements UserDetails {
 
     String email;
 
+    String imageUrl;
+
     String password;
 
     @Enumerated(EnumType.STRING)
@@ -46,6 +48,11 @@ public class User extends BaseEntity implements UserDetails {
 
     @CreationTimestamp
     LocalDateTime createdAt;
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

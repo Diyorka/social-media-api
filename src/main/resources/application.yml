@@ -8,13 +8,12 @@ spring:
       ddl-auto: update
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
     open-in-view: false
 
 app:
-  jwtSecret: 397A24432646294A404E635266546A576E5A7234753778214125442A472D4B61
+  jwtSecret: oMRduQDUnscUHpOkE6hwt8V5JWgGVHH9CIQqrRfSREXz5AnN+ZZkrsayGOBGgky6
   jwtExpirationInMs: 36000000
   refreshExpirationInMs: 259200000
-  recoveryValidityInSeconds: 7200
+
 server:
   port: 8080
