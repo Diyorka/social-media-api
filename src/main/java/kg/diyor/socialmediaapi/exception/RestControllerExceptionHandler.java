@@ -109,4 +109,19 @@ public class RestControllerExceptionHandler extends ResponseEntityExceptionHandl
 
         return new ResponseEntity<>(error, error.getStatus());
     }
+
+    @ExceptionHandler(FileEmptyException.class)
+    public ResponseEntity<Object> handleFileEmpty(FileEmptyException e){
+        List<String> details = new ArrayList<>();
+        details.add(e.getMessage());
+
+        ApiError error = new ApiError(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST,
+                "File is empty",
+                details
+        );
+
+        return new ResponseEntity<>(error, error.getStatus());
+    }
 }

@@ -22,7 +22,7 @@ public class RequestUserDTO {
     String email;
 
     @NotEmpty(message = "Username can't be empty")
-    String username;
+    String name;
 
     @Size(min = 4, max = 50, message = "Password should contain from 4 to 50 characters")
     String password;
