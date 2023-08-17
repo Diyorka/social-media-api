@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 @Tag(
         name = "Контроллер для авторизации/регистрации",
         description = "В этом контроллере есть возможности авторизации, регистрации, обновления токена и выхода"
