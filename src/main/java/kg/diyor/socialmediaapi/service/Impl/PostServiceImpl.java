@@ -100,7 +100,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<ResponsePostDTO> getSubscribedUsersPosts(User user) {
-        return null;
+        return toResponsePostDTOs(postRepository.findAllSubscribedUsersPosts(user));
     }
 
     @SneakyThrows
