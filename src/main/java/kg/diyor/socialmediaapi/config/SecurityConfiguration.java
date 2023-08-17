@@ -37,7 +37,16 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(AbstractHttpConfigurer::disable)
+                .cors(cors -> cors
+                        .configurationSource(request -> {
+                            CorsConfiguration corsConfig = new CorsConfiguration();
+                            corsConfig.addAllowedOrigin("*"); // Разрешить для всех доменов
+                            corsConfig.addAllowedMethod("*"); // Разрешить все HTTP методы
+                            corsConfig.addAllowedHeader("*"); // Разрешить все заголовки
+                            corsConfig.setAllowCredentials(true); // Разрешить кросс-доменные cookies и аутентификацию
+                            return corsConfig;
+                        })
+                )
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(WHITELISTED_ENDPOINTS).permitAll()
