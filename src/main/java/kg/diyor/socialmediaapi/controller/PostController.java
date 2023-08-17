@@ -28,7 +28,6 @@ import java.util.List;
 @RequestMapping("/api/posts")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 @Tag(
         name = "Контроллер для работы с постами",
         description = "В этом контроллере есть возможности добавления, изменения, получения и удаления постов"

@@ -23,7 +23,6 @@ import java.util.List;
 @RequestMapping("/api/users")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 @Tag(
         name = "Контроллер для работы с пользователями",
         description = "В этом контроллере есть возможности получения пользователей и их данных"
