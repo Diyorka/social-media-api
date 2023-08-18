@@ -90,7 +90,7 @@ public class PostController {
     @GetMapping("/of-subscribed-users")
     @SecurityRequirement(name = "JWT")
     @Operation(
-            summary = "Получение постов всех пользователей на которых подписан сортируя по дате"
+            summary = "Получение постов всех пользователей, на которых подписан, сортируя по дате"
     )
     public List<ResponsePostDTO> getSubscribedUsersPosts(@AuthenticationPrincipal User user){
         return postService.getSubscribedUsersPosts(user);

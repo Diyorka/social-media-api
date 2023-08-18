@@ -53,7 +53,7 @@ public class SubscriptionController {
     @GetMapping("/my-subscribers")
     @SecurityRequirement(name = "JWT")
     @Operation(
-            summary = "Получит список подписчиков пользователя"
+            summary = "Получить список подписчиков пользователя"
     )
     public List<ResponseSubscriptionDTO> getMySubscribers(@AuthenticationPrincipal User user){
         return subscriptionService.getMySubscribers(user);
