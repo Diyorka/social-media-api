@@ -41,9 +41,12 @@ public class FriendshipServiceImpl implements FriendshipService {
         Friendship friendship = friendshipRepository.findById(friendship_id)
                         .orElseThrow(() -> new NotFoundException("Friendship wasn't found"));
 
+        Friendship friendship1 = friendshipRepository.findByFriend(user).get();
+
         Subscription subscription = subscriptionRepository.findBySubscriberAndUser(user, friendship.getFriend()).get();
 
         subscriptionRepository.delete(subscription);
+        friendshipRepository.delete(friendship1);
         friendshipRepository.delete(friendship);
 
         return ResponseEntity.ok("Friend was deleted");

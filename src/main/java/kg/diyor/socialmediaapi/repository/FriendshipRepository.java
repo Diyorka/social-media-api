@@ -18,4 +18,6 @@ public interface FriendshipRepository extends JpaRepository<Friendship, Long> {
     List<Friendship> findAllByUser(User user);
 
     Optional<Friendship> findByUserAndFriend(User user, User friend);
+
+    Optional<Friendship> findByFriend(User user);
 }

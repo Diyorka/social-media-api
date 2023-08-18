@@ -104,8 +104,14 @@ public class FriendRequestServiceImpl implements FriendRequestService {
                 .user(user)
                 .build();
 
+        Friendship friendship2 = Friendship.builder()
+                .friend(user)
+                .user(friendRequest.getFromUser())
+                .build();
+
         subscriptionRepository.save(subscription);
         friendshipRepository.save(friendship);
+        friendshipRepository.save(friendship2);
 
         friendRequestRepository.delete(friendRequest);
         return ResponseEntity.ok("Request was successfully accepted");
