@@ -22,9 +22,11 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Chat extends BaseEntity{
     @ManyToOne
+    @JoinColumn(name = "participant1_id")
     User participant1;
 
     @ManyToOne
+    @JoinColumn(name = "participant2_id")
     User participant2;
 
     @OneToMany(mappedBy = "chat", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)

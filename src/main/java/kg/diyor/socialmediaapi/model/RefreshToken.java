@@ -27,5 +27,6 @@ public class RefreshToken extends BaseEntity{
     Instant expiryDate;
 
     @OneToOne
+    @JoinColumn(name = "user_id")
     User user;
 }

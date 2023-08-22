@@ -1,9 +1,6 @@
 package kg.diyor.socialmediaapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
@@ -39,5 +36,6 @@ public class Post extends BaseEntity{
     LocalDateTime updatedAt;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     User user;
 }

@@ -1,6 +1,7 @@
 package kg.diyor.socialmediaapi.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -26,9 +27,11 @@ public class Comment extends BaseEntity{
     String text;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     User user;
 
     @ManyToOne
+    @JoinColumn(name = "post_id")
     Post post;
 
     @CreationTimestamp
