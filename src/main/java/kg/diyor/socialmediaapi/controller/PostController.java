@@ -81,6 +81,7 @@ public class PostController {
     }
 
     @GetMapping("/of/{user_id}")
+    @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Получение постов пользователя по айди"
     )

@@ -32,6 +32,7 @@ public class CommentController {
     CommentService commentService;
 
     @GetMapping("/{postId})")
+    @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Получить комментарии к посту"
     )
