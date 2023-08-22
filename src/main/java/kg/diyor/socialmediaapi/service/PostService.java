@@ -2,6 +2,8 @@ package kg.diyor.socialmediaapi.service;
 
 import kg.diyor.socialmediaapi.dto.post.ResponsePostDTO;
 import kg.diyor.socialmediaapi.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,5 +26,5 @@ public interface PostService {
 
     List<ResponsePostDTO> getUsersPosts(Long userId);
 
-    List<ResponsePostDTO> getSubscribedUsersPosts(User user);
+    Page<ResponsePostDTO> getSubscribedUsersPosts(User user, Pageable pageable);
 }

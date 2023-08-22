@@ -14,6 +14,9 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -99,8 +102,10 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<ResponsePostDTO> getSubscribedUsersPosts(User user) {
-        return toResponsePostDTOs(postRepository.findAllSubscribedUsersPosts(user));
+    public Page<ResponsePostDTO> getSubscribedUsersPosts(User user, Pageable pageable) {
+        Page<Post> posts = postRepository.findAllSubscribedUsersPosts(user, pageable);
+        List<ResponsePostDTO> postDTOS = toResponsePostDTOs(posts.toList());
+        return new PageImpl<>(postDTOS, pageable, posts.getTotalElements());
     }
 
     @SneakyThrows
