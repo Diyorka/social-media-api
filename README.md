@@ -5,4 +5,4 @@ RESTful API для социальной медиа платформы,
 посты, переписываться, подписываться на других пользователей и получать
 свою ленту активности.
 
-https://social-media-api-production-714d.up.railway.app/swagger-ui/index.html#/
+
